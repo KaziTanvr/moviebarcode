@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 
 # import required libraries
 import argparse
@@ -10,6 +8,12 @@ import numpy as np
 from src.moviebarcode import Moviebarcode
 from src.getVideoPaths import list_videos
 from src.eventbarcode import EventBarcode
+from flask import Flask
+from datetime import datetime
+app = Flask(__name__)
+
+@app.route('/')#!/usr/bin/env python
+
 
 
 def vid2barcode(video_path):
@@ -58,4 +62,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    app.run(debug=True, use_reloader=True)
